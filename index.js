@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const geneMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -42,7 +41,7 @@ function writeToFile(fileName, data) {
 function init() {
  inquirer.prompt(
     questions).then(answer => {
-        writeToFile('${answer.title}.md', geneMarkdown.generateMarkdown(answer));
+        writeToFile('${answer.title}.md', (answer));
     })
 }
 
